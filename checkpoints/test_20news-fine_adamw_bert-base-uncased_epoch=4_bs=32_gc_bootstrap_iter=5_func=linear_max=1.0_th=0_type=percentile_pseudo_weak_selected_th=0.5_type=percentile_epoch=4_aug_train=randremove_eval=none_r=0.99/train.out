@@ -1,0 +1,53 @@
+{'trial': None, 'gradient_clipping': True, 'adremove': False, 'adremove_alpha': 0.5, 'randremove': False, 'randremove_alpha': 0.5, 'randremove_num': 0.1, 'mlmreplace': False, 'mlmreplace_alpha': 0.5, 'augparaphrase': False, 'augparaphrase_alpha': 0.5, 'augparaphrase_temperature': 2, 'backdoorTrack': True, 'seedwordAdTrack': True, 'exTrack_eval_subset': False, 'exTrackOptions_eval_subset': ['record_softmax_last'], 'pseudo_weak_sup': True, 'pseudo_weak_sup_select': True, 'pseudo_weak_sup_select_metric': 'confidence', 'pseudo_weak_sup_select_train_epochs': 4, 'pseudo_weak_sup_select_train_aug': 'randremove', 'pseudo_weak_sup_select_eval_aug': 'none', 'pseudo_weak_sup_select_aug_randremove_ratio': 0.99, 'pseudo_weak_sup_select_aug_paraphrase_temperature': 4, 'pseudo_weak_sup_select_aug_mlmreplace_ratio': 0.9, 'pseudo_weak_sup_select_threshold': 0.5, 'pseudo_weak_sup_select_threshold_type': 'percentile', 'pseudo_weak_sup_select_class_balance': True, 'bootstrap': True, 'bootstrap_n_iteration': 5, 'bootstrap_threshold_func': 'linear_max=1.0', 'bootstrap_epoch_func': 'constant', 'pseudo_model_path': None, 'pseudo_unlabeled_idx_path': None, 'pseudo_threshold': 0.0, 'pseudo_threshold_type': 'percentile', 'pseudo_class_balance': True, 'save_pseudo_label': True, 'save_pseudo_label_unlabeled_idx_path': None, 'save_pseudo_label_epoch': False, 'checkpoint_dir': 'checkpoints', 'dataset': '20news-fine', 'encoding_max_length': 512, 'test_ratio': 0.15, 'class_balanced_sampling': True, 'data_dir': '/home/chengyu/bert_classification/data', 'opt': 'adamw', 'model': 'bert-base-uncased', 'scheduler': 'linear', 'resume': False, 'epochs': 4, 'lr': 2e-05, 'batch_size': 4, 'update_freq': 8, 'wd': 0, 'momentum': None, 'gamma': None, 'gpu_id': 1, 'manual_seed': None, 'state_path': None, 'save_model': False, 'save_checkpoint': False, 'checkpoint': 'test_20news-fine_adamw_bert-base-uncased_epoch=4_bs=32_gc_bootstrap_iter=5_func=linear_max=1.0_th=0_type=percentile_pseudo_weak_selected_th=0.5_type=percentile_epoch=4_aug_train=randremove_eval=none_r=0.99'}
+
+=====> Current time..
+2024-01-09 06:21:39.754565
+
+          ----------------------------------------------------------------------------
+                                    Probe training starts..                               
+          ----------------------------------------------------------------------------
+
+
+=====> Probe training
+
+          ----------------------------------------------------------------------------
+                                    Aug type train: randremove                               
+          ----------------------------------------------------------------------------
+
+=====> Init training..
+
+=====> Loading data..
+==> Label names
+{0: 'talk.politics.mideast', 1: 'rec.autos', 2: 'comp.sys.mac.hardware', 3: 'alt.atheism', 4: 'rec.sport.baseball', 5: 'comp.os.ms-windows.misc', 6: 'rec.sport.hockey', 7: 'sci.crypt', 8: 'sci.med', 9: 'rec.motorcycles', 10: 'comp.windows.x', 11: 'comp.graphics', 12: 'comp.sys.ibm.pc.hardware', 13: 'sci.electronics', 14: 'talk.politics.guns', 15: 'sci.space', 16: 'soc.religion.christian'}
+
+==> Load weak pseudo-labels..
+[WSL] ----------------- Pseudo-labeling Info -----------------
+[WSL] Pseudo-labeled subset size: 10455
+[WSL] Class count (True label):  [(0, 649), (1, 650), (2, 721), (3, 504), (4, 384), (5, 837), (6, 574), (7, 821), (8, 228), (9, 811), (10, 653), (11, 602), (12, 631), (13, 488), (14, 548), (15, 667), (16, 687)]
+[WSL] Class count (Pseudo label):  [(0, 571), (1, 594), (2, 626), (3, 374), (4, 361), (5, 1285), (6, 474), (7, 1072), (8, 124), (9, 705), (10, 521), (11, 603), (12, 724), (13, 466), (14, 525), (15, 660), (16, 770)]
+[WSL] Noise ratio: 25.67%
+[WSL] Coverage: 63.49%
+[WSL] --------------------------------------------------------
+
+==> training set
+---------- Basic info ----------------
+dataset size: 10455
+input shape:  torch.Size([512])
+num classes: 17
+---------- Frequency count -----------------
+{0: 571, 1: 594, 2: 626, 3: 374, 4: 361, 5: 1285, 6: 474, 7: 1072, 8: 124, 9: 705, 10: 521, 11: 603, 12: 724, 13: 466, 14: 525, 15: 660, 16: 770}
+
+==> test set
+---------- Basic info ----------------
+dataset size: 2469
+input shape:  torch.Size([512])
+num classes: 17
+---------- Frequency count -----------------
+{0: 141, 1: 148, 2: 144, 3: 120, 4: 149, 5: 148, 6: 150, 7: 149, 8: 148, 9: 149, 10: 148, 11: 146, 12: 147, 13: 148, 14: 136, 15: 148, 16: 150}
+
+=====> Initializing model..
+     Total params: 109.50M
+
+=====> Initializing optimizer..
+=====> Training..
+ ------------------------ Using RandomRemove ------------------------

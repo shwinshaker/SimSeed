@@ -1,0 +1,50 @@
+#!./env python
+
+from .vgg import *
+from .resnet import *
+from .preresnet import *
+from .preresnet_woskip import *
+from .preresnet_fixup import *
+from .resnet_wobn import *
+from .resnet_woaffine import *
+from .resnet_woskip import *
+from .resnet_fixup import *
+from .wideresnet import *
+from .wideresnet_stoDepth import *
+
+from .linear import *
+from .ffn import *
+
+from .preactresnet import *
+from .preactresnet_fixup import *
+from .preactresnet_gn import *
+
+# from src.models import get_vgg, get_linear, resnet, preresnet, resnet_wobn, resnet_fixup, resnet_woaffine, resnet_woskip, preresnet_woskip, preresnet_fixup
+# from src.models import ffn
+# import src.models as models
+
+def get_net(config, loaders):
+    if 'vgg' in config.model:
+        net = get_vgg(model=config.model, batch_norm=config.bn, num_classes=loaders.num_classes, n_channel=loaders.n_channel, gain=config.gain, dataset=config.dataset).to(config.device)
+        # model = vgg11(num_classes=loaders.num_classes, gain=gain).to(config.device)
+
+    elif 'dln' in config.model or config.model == 'logistic':
+        net = get_linear(model=config.model, batch_norm=config.bn, num_classes=loaders.num_classes, n_channel=loaders.n_channel, gain=config.gain, dataset=config.dataset).to(config.device)
+
+    elif config.model in ['ResNet18', 'PreActResNet18', 'FixupPreActResNet18', 'PreActResNetGN18']:
+        net = globals()[config.model](num_classes=loaders.num_classes, n_channel=loaders.n_channel).to(config.device)
+
+    elif 'resnet' in config.model:
+        print('warning! original resnet script has been overriden by ResNet18! Resolve this')
+        net = globals()[config.model](depth=config.depth, width=config.width, num_classes=loaders.num_classes, n_channel=loaders.n_channel, gain=config.gain).to(config.device)
+
+    elif 'wrn' in config.model:
+        net = globals()[config.model](depth=config.depth, widen_factor=config.width, num_classes=loaders.num_classes, n_channel=loaders.n_channel).to(config.device)
+
+    elif 'ffn' in config.model:
+        net = globals()[config.model](depth=config.depth, width=config.width, bn=config.bn, num_classes=loaders.num_classes, dataset=config.dataset).to(config.device)
+
+    else:
+        raise KeyError(config.model)
+
+    return net
