@@ -77,8 +77,8 @@ def save_weak_labels(config):
                        true_label=tar_unlabeled['true_label'],
                        conf_type=conf_type,
                        aug_type=config.pseudo_weak_sup_select_eval_aug, # true labels can be used to double check
-                       dropout=config.pseudo_weak_sup_select_mc_dropout,
-                       dropout_passes=config.pseudo_weak_sup_select_mc_dropout_passes,
+                       dropout=config.get('pseudo_weak_sup_select_mc_dropout'),
+                       dropout_passes=config.get('pseudo_weak_sup_select_mc_dropout_passes'),
                        use_prediction=use_prediction,
                        randremove_num=config.randremove_num,
                        randadremove_num=config.randadremove_num if hasattr(config, 'randadremove_num') else None,

@@ -1,1 +1,0 @@
-test_20news-fine_adamw_bert-base-uncased_epoch=4_bs=32_gc_bootstrap_iter=5_func=linear_max=1.0_th=0_type=percentile_pseudo_weak_selected_th=0.5_type=percentile_epoch=4_aug_train=randremove_eval=none_r=0.99

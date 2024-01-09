@@ -1,1 +1,0 @@
-Epoch	Time-elapse(Min)	Test-Loss-AD	Test-Acc-AD	Macro-F1-AD	Micro-F1-AD	
