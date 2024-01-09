@@ -190,8 +190,10 @@ def get_weak_supervision(trainids, data_dir, dataset, seed_file_name="seedwords.
 
 from nltk.corpus import stopwords
 import string
+import nltk
 def preprocess(df):
     print("Preprocessing data..", flush=True)
+    nltk.download('stopwords')
     stop_words = set(stopwords.words('english'))
     stop_words.add('would')
     for index, row in df.iterrows():
