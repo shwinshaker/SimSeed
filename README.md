@@ -4,7 +4,6 @@ A simple yet effective method for seed word-based weakly supervised text classif
 ## Installation
 1. Install anaconda
 2. `bash install.sh`
-3. Download datasets
 
 ## Run
 
