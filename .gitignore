@@ -1,3 +1,24 @@
+# mine
+log.txt
+log-*.txt
+log_*.txt
+tmp/
+# *.sh
+data_subsets/
+configs/
+# migrate.sh
+*.yaml
+
+# tmp dirs and files
+checkpoint
+checkpoints
+checkpoints*
+data
+test.eps
+dev
+monitor.py
+exp
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
