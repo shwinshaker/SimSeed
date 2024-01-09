@@ -7,14 +7,13 @@
 #!/bin/bash
 
 # ------- env setup -----------
-conda_env='bert'
+data_dir="$(pwd)/data"
+conda_env='bert2'
 conda_version='anaconda3'
-mkdir -p checkpoints
-mkdir -p logs
-mkdir -p tmp
 
 config=$1 
 [[ -z $config ]] && config="config.yaml"
+sed -i "s@^data_dir:.*@data_dir: '$data_dir'@g" $config  # use @ as deliminator because slash / conflicts with path
 
 python config.py -c $config
 [[ $? -ne 0 ]] && echo 'exit' && exit 2

@@ -76,7 +76,7 @@ dataset: 20news-fine
 encoding_max_length: 512
 test_ratio: 0.15  # select a random subset for testing
 class_balanced_sampling: True
-data_dir: '/home/chengyu/bert_classification/data'
+data_dir: '/home/chengyu/SimSeed/data'
 opt: adamw
 model: bert-base-uncased
 scheduler: linear
