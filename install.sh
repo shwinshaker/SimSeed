@@ -13,7 +13,6 @@ conda create -n bert2 python=3.9.1
 source /home/chengyu/anaconda3/bin/activate bert2
 pip install huggingface-hub==0.0.12
 pip install transformers==4.8
-# pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
 pip install torch==2.0.1 torchvision==0.15.2 torchaudio==2.0.2
 pip install pandas
 pip install --user -U nltk
