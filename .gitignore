@@ -7,12 +7,12 @@ tmp/
 data_subsets/
 configs/
 # migrate.sh
-*.yaml
 
 # tmp dirs and files
 checkpoint
 checkpoints
 checkpoints*
+checkpoints/
 data
 test.eps
 dev

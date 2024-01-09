@@ -1,7 +1,7 @@
 # ---- preset paras ---- (for config only)
-test: True  # test mode for quick sanity check
+test: True  # test mode for quick sanity check, will print on screen
 # test setting:
-#    probe traing epoch = 1, split = 2, encoding = 64, batch size = 32x1
+#    encoding = 64, batch size = 32x1
 #    dataset summary show example = False
 #    get_pseudo_label verbose = False
 #    huggingface warning = none
@@ -83,8 +83,8 @@ scheduler: linear
 resume: False
 epochs: 4
 lr: 2e-5
-batch_size: 4
-update_freq: 8  # grad accumulation to reduce peak memory
+batch_size: 8
+update_freq: 4  # grad accumulation to reduce peak memory
 wd: 0
 momentum:
 gamma:
