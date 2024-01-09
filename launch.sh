@@ -6,9 +6,9 @@
 
 #!/bin/bash
 
-# ---------------
+# ------- env setup -----------
 data_dir='/home/chengyu/bert_classification/data'
-conda_env='bert2'
+conda_env='bert'
 conda_version='anaconda3'
 mkdir -p checkpoints
 mkdir -p logs
