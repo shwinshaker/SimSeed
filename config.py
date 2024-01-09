@@ -226,7 +226,9 @@ def read_config(config_file='config.yaml', remote=False, server=None): # , remot
 
     if config['test']:
         config['checkpoint'] = 'test_' + config['checkpoint']
-        # config['encoding_max_length'] = 64 # speed up
+        config['encoding_max_length'] = 64 # speed up
+        config['batch_size'] = 32
+        config['update_freq'] = 1
     del config['test']
 
     path = os.path.join(config['checkpoint_dir'], config['checkpoint'])
