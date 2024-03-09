@@ -28,8 +28,29 @@ mkdir -p tmp
 mkdir -p data
 pip3 install gdown
 
-# - 20news-fine
 cd data
+# - 20news-fine
 gdown https://drive.google.com/uc?id=1Aysr7udzK2gFVis470iuK3rBws_EHrHB
 unzip 20news-fine.zip
+
+# - 20news-coarse
+gdown https://drive.google.com/uc?id=1vOBvIWIZhnlOUQnrmzQnwVMfE1nrvhXA
+unzip 20news-coarse.zip
+
+# - agnews
+gdown https://drive.google.com/uc?id=1_3sgSnnniExqpY-X_mBPGjDCaOnt1WI9
+unzip agnews
+
+# - nyt-coarse
+gdown https://drive.google.com/uc?id=1E1j8-ya52loWsh9SBeJRxw7SzFPQwiE_
+unzip nyt-coarse
+
+# - nyt-fine
+gdown https://drive.google.com/uc?id=1Ne9VjoF709WkO78v_lH4M2JtdiPufmkq
+unzip nyt-fine
+
+# - rotten_tomatoes
+gdown https://drive.google.com/uc?id=1dzyvuMIFyVgzrfB6qQVgTvhdmrCkMQrT
+unzip rotten_tomatoes
+
 cd ..
